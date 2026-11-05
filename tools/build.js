@@ -9,7 +9,7 @@ const fs=require('fs'),path=require('path');
 const root=path.resolve(__dirname,'..'),dist=path.join(root,'dist');
 const vendorOnly=process.argv.includes('--vendor-only');
 const repoEnv=process.env.GITHUB_REPOSITORY||'';           // owner/repo
-let site=(process.env.SITE_URL||'').replace(/\/+$/,''),repo=(process.env.REPO_URL||'').replace(/\/+$/,'');
+let site=(process.env.SITE_URL||'https://open-rts.kro.kr').replace(/\/+$/,''),repo=(process.env.REPO_URL||'').replace(/\/+$/,'');
 if(!site&&repoEnv){const[o,r]=repoEnv.split('/');site=r.toLowerCase()===(o+'.github.io').toLowerCase()?`https://${o}.github.io`:`https://${o}.github.io/${r}`}
 if(!repo&&repoEnv)repo='https://github.com/'+repoEnv;
 site=site||'https://example.github.io/openrts';repo=repo||'https://github.com/OWNER/openrts';
@@ -29,6 +29,6 @@ const textExt=/\.(html|xml|txt|webmanifest|json)$/;
 function cp(rel){const s=path.join(root,rel),d=path.join(dist,rel);
  if(fs.statSync(s).isDirectory()){fs.mkdirSync(d,{recursive:true});for(const f of fs.readdirSync(s))cp(path.join(rel,f))}
  else{fs.mkdirSync(path.dirname(d),{recursive:true});if(textExt.test(rel))fs.writeFileSync(d,rep(fs.readFileSync(s,'utf8')));else fs.copyFileSync(s,d)}}
-for(const f of ['index.html','robots.txt','sitemap.xml','site.webmanifest','404.html','.nojekyll','LICENSE','css','js','icons','favicon.ico'])if(fs.existsSync(path.join(root,f)))cp(f);
+for(const f of ['index.html','robots.txt','sitemap.xml','site.webmanifest','404.html','.nojekyll','CNAME','LICENSE','css','js','icons','favicon.ico'])if(fs.existsSync(path.join(root,f)))cp(f);
 vendor(dist);
 console.log(`\n빌드 완료 → dist/\n  SITE_URL = ${site}\n  REPO_URL = ${repo}`);

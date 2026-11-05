@@ -26,7 +26,7 @@ npm start          # http://localhost:8080
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions** 를 선택합니다.
 3. `main` 에 push 하면 `.github/workflows/pages.yml` 이 `npm run build` 를 실행해 `dist/` 를 배포합니다.
    - 빌드가 `index.html`/`sitemap.xml`/`robots.txt` 의 `__SITE_URL__`, `__REPO_URL__` 을 실제 주소로 바꿉니다 (`GITHUB_REPOSITORY` 로 자동 추정, `SITE_URL`/`REPO_URL` 환경변수로 덮어쓰기 가능).
-4. 커스텀 도메인을 쓰면 `SITE_URL=https://example.com npm run build` 로 빌드하세요.
+4. 이 프로젝트는 `open-rts.kro.kr` 도메인이 기본값입니다 (`CNAME` 파일, 빌드의 `SITE_URL`). 도메인 DNS 의 CNAME 레코드를 `<계정>.github.io` 로 지정하고, Settings → Pages → Custom domain 에 같은 도메인을 입력한 뒤 Enforce HTTPS 를 켜세요. 다른 도메인은 `SITE_URL=https://example.com npm run build`.
 5. 검색 노출: Google Search Console / 네이버 서치어드바이저에 사이트와 `sitemap.xml` 을 등록하세요.
 
 ## 온라인 플레이 방법

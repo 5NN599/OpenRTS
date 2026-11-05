@@ -4,7 +4,7 @@
   "description": "OpenRTS — 브라우저에서 즐기는 무료 오픈소스 P2P 실시간 전략 게임 (최대 4인)",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/OWNER/openrts",
+  "homepage": "https://open-rts.kro.kr",
   "scripts": {
     "vendor": "node tools/build.js --vendor-only",
     "build": "node tools/build.js",
