@@ -1,0 +1,23 @@
+{
+  "name": "openrts",
+  "version": "1.0.0",
+  "description": "OpenRTS — 브라우저에서 즐기는 무료 오픈소스 P2P 실시간 전략 게임 (최대 4인)",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/OWNER/openrts",
+  "scripts": {
+    "vendor": "node tools/build.js --vendor-only",
+    "build": "node tools/build.js",
+    "start": "npm run vendor && node tools/serve.js .",
+    "serve": "node tools/serve.js dist",
+    "test": "node tests/run.js"
+  },
+  "dependencies": {
+    "mqtt": "^5.10.1",
+    "peerjs": "^1.5.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  },
+  "engines": { "node": ">=18" }
+}

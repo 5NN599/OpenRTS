@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>OpenRTS — 브라우저 P2P 실시간 전략 게임 | 설치 없는 무료 온라인 RTS</title>
+<meta name="description" content="OpenRTS는 설치 없이 브라우저에서 바로 즐기는 무료 오픈소스 실시간 전략(RTS) 게임입니다. 고저차 지형의 2.5D 전장, 최대 4인 P2P 온라인 대전, 공개 방·8자리 비밀 방, 개인전·팀전·비대칭 팀전·AI 대 인간 모드를 지원합니다.">
+<meta name="keywords" content="OpenRTS, 실시간 전략 게임, RTS, 웹 게임, 브라우저 게임, 온라인 멀티플레이, P2P, 무료 게임, 오픈소스 게임, 2.5D, 팀전">
+<meta name="author" content="OpenRTS contributors">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#050b12">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="__SITE_URL__/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071522'/%3E%3Cpath d='M32 8 54 20v24L32 56 10 44V20z' fill='%23123a5c' stroke='%233ea6ff' stroke-width='3'/%3E%3Cpath d='M32 18 44 25v14l-12 7-12-7V25z' fill='%233ea6ff'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23071522'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OpenRTS">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="OpenRTS — 브라우저 P2P 실시간 전략 게임">
+<meta property="og:description" content="설치 없이 브라우저에서. 고저차 지형 2.5D 전장, 최대 4인 P2P 대전, 공개 방과 8자리 비밀 방. 무료 오픈소스 RTS.">
+<meta property="og:url" content="__SITE_URL__/">
+<meta property="og:image" content="__SITE_URL__/icons/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OpenRTS 게임 플레이 화면">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenRTS — 브라우저 P2P 실시간 전략 게임">
+<meta name="twitter:description" content="설치 없이 브라우저에서. 최대 4인 P2P 온라인 대전 RTS. 무료 · MIT 오픈소스.">
+<meta name="twitter:image" content="__SITE_URL__/icons/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","@id":"__SITE_URL__/#site","url":"__SITE_URL__/","name":"OpenRTS","alternateName":"오픈알티에스","description":"브라우저에서 즐기는 무료 오픈소스 P2P 실시간 전략 게임","inLanguage":"ko"},
+{"@type":"VideoGame","@id":"__SITE_URL__/#game","name":"OpenRTS","url":"__SITE_URL__/","description":"고저차 지형이 있는 2.5D 전장에서 자원을 채굴하고 기지를 세워 군대를 지휘하는 실시간 전략 게임. 최대 4인 P2P 온라인 멀티플레이를 지원합니다.","genre":["실시간 전략","RTS","전략"],"applicationCategory":"Game","gamePlatform":"Web browser","operatingSystem":"Any","playMode":["SinglePlayer","MultiPlayer"],"numberOfPlayers":{"@type":"QuantitativeValue","minValue":1,"maxValue":4},"inLanguage":"ko","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","image":"__SITE_URL__/icons/og-image.png","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"OpenRTS는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 설치도 회원가입도 없이 브라우저에서 무료로 플레이할 수 있으며, 소스 코드는 MIT 라이선스로 공개되어 있습니다."}},
+{"@type":"Question","name":"온라인 멀티플레이는 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"방을 만들면 방장이 호스트가 되고 다른 플레이어는 WebRTC P2P로 직접 연결됩니다. 공개 방은 목록에서 고르고, 비밀 방은 방장이 알려준 8자리 숫자 코드를 입력해 입장합니다."}},
+{"@type":"Question","name":"최대 몇 명까지 함께 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"한 방에 최대 4명이며 빈 자리는 난이도(쉬움·보통·어려움)를 슬롯마다 따로 정한 인공지능으로 채울 수 있습니다."}},
+{"@type":"Question","name":"치팅이나 핵을 어떻게 막나요?","acceptedAnswer":{"@type":"Answer","text":"모든 게임 계산은 방장의 브라우저에서 이루어지고 참가자는 명령만 보냅니다. 방장이 소유권, 자원, 건설 위치, 시야를 검증하며 안개 속 정보는 아예 전송하지 않아 맵핵이 불가능합니다."}}
+]}]}
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site">
+<nav class="nav" aria-label="주 메뉴"><div class="wrap">
+ <a class="logo" href="#top-hero" aria-label="OpenRTS 홈"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 56 19v26L32 58 8 45V19z" fill="#123a5c" stroke="#3ea6ff" stroke-width="4"/><path d="M32 18 45 25.5v13L32 46 19 38.5v-13z" fill="#3ea6ff"/></svg>OPEN<b>RTS</b></a>
+ <a class="l" href="#modes">게임 모드</a><a class="l" href="#features">특징</a><a class="l" href="#howto">조작법</a><a class="l" href="#faq">FAQ</a>
+ <span class="sp"></span>
+ <a class="l" href="__REPO_URL__" rel="noopener" target="_blank">GitHub</a>
+ <button class="btn sm pri" data-act="quick">바로 플레이</button>
+</div></nav>
+
+<header class="hero" id="top-hero">
+ <canvas id="heroBg" aria-hidden="true"></canvas>
+ <div class="wrap">
+  <h1>OPEN<span>RTS</span></h1>
+  <p class="tag">설치 없이 브라우저에서 즐기는 P2P 실시간 전략 게임</p>
+  <p class="sub">고지대와 절벽이 시야를 가르는 2.5D 전장에서 자원을 캐고, 기지를 세우고, 군대를 지휘하세요. 친구와 최대 4명까지 서버 없이 직접 연결해 대전할 수 있습니다.</p>
+  <div class="cta">
+   <button class="btn pri big" data-act="quick">▶ 바로 플레이 (AI 대전)</button>
+   <button class="btn big" data-act="create">＋ 방 만들기</button>
+   <button class="btn big" data-act="browse">☷ 공개 방 찾기</button>
+   <button class="btn big" data-act="join">⌗ 코드로 입장</button>
+  </div>
+  <div class="badges"><span>무료</span><span>설치·가입 없음</span><span>최대 4인 P2P</span><span>MIT 오픈소스</span></div>
+ </div>
+</header>
+
+<main>
+<section class="blk" id="modes"><div class="wrap">
+ <h2>네 가지 게임 모드</h2>
+ <p class="lead">방을 만들 때 모드를 고르세요. 빈 슬롯은 쉬움·보통·어려움 중 슬롯마다 따로 정한 AI로 채울 수 있습니다.</p>
+ <div class="grid">
+  <article class="card"><div class="ic">⚔️</div><h3>개인전</h3><p>모두가 서로의 적입니다. 동맹 없이 마지막까지 살아남는 한 명이 승리합니다.</p></article>
+  <article class="card"><div class="ic">🤝</div><h3>팀전</h3><p>A팀 대 B팀. 슬롯마다 팀을 자유롭게 나눌 수 있고, 같은 팀은 시야를 공유합니다.</p></article>
+  <article class="card"><div class="ic">⚖️</div><h3>비대칭 팀전</h3><p>1 대 3처럼 인원이 다른 팀의 대결. 수가 적은 팀은 자원·체력·인구 보너스를 자동으로 받아 균형을 맞춥니다.</p></article>
+  <article class="card"><div class="ic">🤖</div><h3>인공지능 대 인간</h3><p>사람 플레이어들이 한 팀이 되어 AI 팀과 맞섭니다. AI마다 난이도를 따로 정합니다.</p></article>
+ </div>
+</div></section>
+
+<section class="blk" id="features"><div class="wrap">
+ <h2>OpenRTS의 특징</h2>
+ <p class="lead">가벼운 웹 기술만으로 만든 완전한 RTS입니다. 모든 그래픽은 캔버스로 그리고, 소리는 실시간 합성합니다.</p>
+ <div class="grid">
+  <article class="card"><div class="ic">⛰️</div><h3>고저차가 있는 2.5D 지형</h3><p>고도 3단계, 절벽과 경사로, 입체 건물. 높은 곳에서는 낮은 곳이 보이지만 반대는 아닙니다. 중앙 관측탑은 넓은 시야를 줍니다.</p></article>
+  <article class="card"><div class="ic">🌐</div><h3>서버 없는 P2P 대전</h3><p>WebRTC로 방장과 직접 연결합니다. 공개 방은 목록에 표시되고, 비밀 방은 8자리 숫자 코드를 아는 사람만 들어올 수 있습니다.</p></article>
+  <article class="card"><div class="ic">🛡️</div><h3>방장 검증형 치트 방지</h3><p>게임 계산은 방장이 맡고 참가자는 명령만 보냅니다. 소유권·자원·건설 위치·시야를 검증하고, 안개 속 정보는 전송하지 않아 맵핵이 불가능합니다.</p></article>
+  <article class="card"><div class="ic">🏭</div><h3>풍부한 유닛과 건물</h3><p>일꾼·보병·의무병·로켓병·워커·와스프, 사령부부터 포탑까지 8종 건물과 무기·방어·자극제 연구를 갖췄습니다.</p></article>
+  <article class="card"><div class="ic">🧠</div><h3>슬롯별 AI 난이도</h3><p>AI 슬롯마다 쉬움·보통·어려움을 개별 설정. 접속이 끊긴 플레이어의 자리는 AI가 이어받습니다.</p></article>
+  <article class="card"><div class="ic">🔓</div><h3>MIT 오픈소스</h3><p>프레임워크 없는 순수 JavaScript. 포크하고 고치고 자유롭게 배포하세요.</p></article>
+ </div>
+</div></section>
+
+<section class="blk" id="howto"><div class="wrap">
+ <h2>기본 조작법</h2>
+ <p class="lead">일꾼으로 광석을 캐 건물을 세우고, 병력을 모아 상대 기지를 무너뜨리세요.</p>
+ <div class="keys">
+  <div><kbd>좌클릭</kbd> / 드래그 — 선택</div><div><kbd>우클릭</kbd> — 이동 · 공격 · 채굴 · 수리</div>
+  <div><kbd>A</kbd>+클릭 — 공격 이동</div><div><kbd>S</kbd> 정지 · <kbd>E</kbd> 자극제</div>
+  <div><kbd>H</kbd> 사령부 · <kbd>G</kbd> 발전기 · <kbd>B</kbd> 병영</div><div><kbd>F</kbd> 공장 · <kbd>L</kbd> 연구소 · <kbd>D</kbd> 비행장</div>
+  <div><kbd>R</kbd> 정제소(녹색 분출구) · <kbd>T</kbd> 포탑</div><div><kbd>Ctrl</kbd>+숫자 부대 지정 · <kbd>Tab</kbd> 전투부대</div>
+  <div>방향키 / 화면 가장자리 — 시점 이동</div><div><kbd>Enter</kbd> 채팅 · <kbd>M</kbd> 음소거 · <kbd>P</kbd> 일시정지(싱글)</div>
+ </div>
+</div></section>
+
+<section class="blk" id="faq"><div class="wrap" style="max-width:820px">
+ <h2>자주 묻는 질문</h2>
+ <details><summary>OpenRTS는 무료인가요?</summary><p>네. 설치도 회원가입도 없이 브라우저에서 무료로 플레이할 수 있고, 소스 코드는 MIT 라이선스로 공개되어 있습니다.</p></details>
+ <details><summary>온라인 멀티플레이는 어떻게 하나요?</summary><p>방을 만들면 방장이 호스트가 되고 다른 플레이어는 WebRTC P2P로 직접 연결됩니다. 공개 방은 목록에서 고르고, 비밀 방은 방장이 알려 준 8자리 숫자 코드를 입력해 입장합니다. 초대 링크(<code>#join=코드</code>)도 사용할 수 있습니다.</p></details>
+ <details><summary>최대 몇 명까지 할 수 있나요?</summary><p>한 방에 최대 4명입니다. 빈 자리는 AI로 채울 수 있고 AI마다 난이도를 따로 정할 수 있습니다.</p></details>
+ <details><summary>치팅이나 핵을 어떻게 막나요?</summary><p>게임 계산은 방장의 브라우저에서만 이루어지고 참가자는 “무엇을 하고 싶은지”만 보냅니다. 방장이 자기 유닛인지, 자원이 충분한지, 건설 위치가 유효한지, 시야에 보이는지를 검사하고 비정상 요청이 반복되면 내보냅니다. 안개 속에 있는 적 정보는 애초에 전송되지 않습니다. 다만 방장 본인이 자기 브라우저를 조작하는 것까지 P2P 구조로는 막을 수 없으니 믿을 수 있는 사람의 방에서 플레이하세요.</p></details>
+ <details><summary>연결이 안 돼요.</summary><p>엄격한 방화벽이나 일부 모바일 망에서는 P2P 연결이 실패할 수 있습니다. 이 경우 같은 네트워크의 방장을 이용하거나 TURN 서버를 설정에 추가해야 합니다. 자세한 내용은 저장소의 README를 참고하세요.</p></details>
+ <details><summary>어떤 브라우저를 지원하나요?</summary><p>최신 Chrome, Edge, Firefox, Safari의 데스크톱 버전을 권장합니다. 마우스와 키보드가 필요합니다.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <p><b>OpenRTS</b> v<span id="ver"></span> · <a href="__REPO_URL__" rel="noopener" target="_blank">GitHub</a> · <a href="__REPO_URL__/blob/main/LICENSE" rel="noopener" target="_blank">MIT License</a></p>
+ <p>OpenRTS는 독립적인 오픈소스 프로젝트이며 특정 상용 게임사와 제휴·후원 관계가 없습니다. 모든 그래픽과 사운드는 이 프로젝트에서 직접 그리고 합성한 것입니다.</p>
+</div></footer>
+<noscript><div class="wrap" style="padding:30px 20px;text-align:center">OpenRTS를 플레이하려면 JavaScript를 켜 주세요. OpenRTS는 브라우저에서 실행되는 무료 P2P 실시간 전략 게임입니다.</div></noscript>
+</div>
+
+<!-- ============ 모달: 방 만들기 ============ -->
+<div class="modal" id="dlgCreate" hidden role="dialog" aria-modal="true" aria-labelledby="hCreate"><form class="dlg" id="fCreate" autocomplete="off">
+ <h2 id="hCreate">방 만들기</h2><p class="hint">방을 만든 사람이 호스트가 되어 게임을 계산하고 치트를 검증합니다.</p>
+ <label for="cName">방 이름</label><input type="text" id="cName" maxlength="24" placeholder="예: 초보 환영">
+ <label for="cNick">내 닉네임</label><input type="text" id="cNick" maxlength="16" placeholder="닉네임">
+ <label>공개 설정</label>
+ <div class="seg">
+  <label><input type="radio" name="cVis" value="public" checked><span>🌐 공개 방<br><small>목록에 표시</small></span></label>
+  <label><input type="radio" name="cVis" value="private"><span>🔒 비밀 방<br><small>8자리 코드</small></span></label>
+  <label><input type="radio" name="cVis" value="solo"><span>🖥 혼자 하기<br><small>온라인 연결 없음</small></span></label>
+ </div>
+ <label for="cMode">게임 모드</label><select id="cMode"></select><div class="modedesc" id="cModeDesc"></div>
+ <div class="err" id="cErr" role="alert"></div>
+ <div class="row end"><button type="button" class="btn ghost" data-close>취소</button><button type="submit" class="btn pri" id="cGo">방 만들기</button></div>
+</form></div>
+
+<!-- ============ 모달: 공개 방 ============ -->
+<div class="modal" id="dlgBrowse" hidden role="dialog" aria-modal="true" aria-labelledby="hBrowse"><div class="dlg" style="max-width:640px">
+ <h2 id="hBrowse">공개 방</h2><p class="hint" id="bStat">방 목록을 불러오는 중…</p>
+ <label for="bNick">내 닉네임</label><input type="text" id="bNick" maxlength="16" placeholder="닉네임">
+ <div style="margin-top:12px" id="bList"></div>
+ <div class="err" id="bErr" role="alert"></div>
+ <div class="row end"><button type="button" class="btn ghost" data-close>닫기</button></div>
+</div></div>
+
+<!-- ============ 모달: 코드 입장 ============ -->
+<div class="modal" id="dlgJoin" hidden role="dialog" aria-modal="true" aria-labelledby="hJoin"><form class="dlg" id="fJoin" autocomplete="off">
+ <h2 id="hJoin">코드로 입장</h2><p class="hint">방장이 알려준 숫자 8자리를 입력하세요. (비밀 방·공개 방 모두 가능)</p>
+ <label for="jCode">방 코드</label><input type="text" id="jCode" class="codein" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" placeholder="00000000">
+ <label for="jNick">내 닉네임</label><input type="text" id="jNick" maxlength="16" placeholder="닉네임">
+ <div class="err" id="jErr" role="alert"></div>
+ <div class="row end"><button type="button" class="btn ghost" data-close>취소</button><button type="submit" class="btn pri" id="jGo">입장</button></div>
+</form></div>
+
+<!-- ============ 로비 ============ -->
+<div id="lobbyView" hidden><div class="lob">
+ <header>
+  <h1 id="lName">방</h1>
+  <span class="pill" id="lVis"></span><span class="pill" id="lMode"></span>
+  <span class="pill code" id="lCode" title="클릭하면 초대 링크를 복사합니다" hidden></span>
+ </header>
+ <section class="box">
+  <div id="lSlots"></div>
+  <div class="row" style="flex-wrap:wrap">
+   <div id="lModeBox" style="flex:1;min-width:180px"><label for="lModeSel" style="margin-top:0">게임 모드</label><select id="lModeSel"></select></div>
+   <div style="flex:1;min-width:180px"><label for="lSeed" style="margin-top:0">맵 시드 (선택)</label><input type="text" id="lSeed" maxlength="24" placeholder="비우면 무작위"></div>
+  </div>
+  <div class="modedesc" id="lModeDesc"></div>
+  <div class="warn" id="lWarn"></div>
+  <div class="row end" style="margin-top:8px"><button class="btn ghost" id="lLeave">나가기</button><button class="btn pri big" id="lStart">게임 시작</button></div>
+ </section>
+ <section class="box chat"><h3 style="margin:0 0 8px;font-size:16px">채팅</h3><div class="log" id="lLog" aria-live="polite"></div>
+  <form id="lChatF" autocomplete="off"><input type="text" id="lChatIn" maxlength="120" placeholder="메시지 입력 후 Enter"><button class="btn sm">전송</button></form></section>
+</div></div>
+
+<!-- ============ 게임 ============ -->
+<div id="gameView" hidden>
+ <canvas id="game"></canvas>
+ <div id="top"><span id="rOre"></span><span id="rPl"></span><span id="rSup"></span><span id="rT"></span><span id="rTech"></span><span id="msg"></span><b>OpenRTS</b></div>
+ <div id="plist" aria-hidden="true"></div>
+ <div id="gchat" aria-live="polite"></div>
+ <form id="gchatIn" hidden autocomplete="off"><input type="text" id="gchatTxt" maxlength="120" placeholder="Enter: 전송 / Esc: 취소"></form>
+ <div id="bottom"><canvas id="mini" width="160" height="160"></canvas><div id="info"></div><div id="cmds"></div></div>
+ <div id="menu" hidden><h2>일시 메뉴</h2><p style="color:var(--dim);margin:0">온라인 게임은 메뉴를 열어도 멈추지 않습니다.</p>
+  <button class="btn pri" id="mResume">계속하기</button><button class="btn danger" id="mLeave">게임 나가기</button></div>
+ <div id="end" hidden><h1 id="endT"></h1><div class="stats" id="endS"></div>
+  <div class="row"><button class="btn pri" id="endLobby">방으로 돌아가기</button><button class="btn" id="endHome">메인 화면</button></div></div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/map.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/snapshot.js"></script>
+<script src="js/net.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

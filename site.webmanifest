@@ -1,0 +1,17 @@
+{
+  "name": "OpenRTS — 브라우저 P2P 실시간 전략 게임",
+  "short_name": "OpenRTS",
+  "description": "설치 없이 브라우저에서 즐기는 무료 오픈소스 RTS. 최대 4인 P2P 대전.",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#050b12",
+  "theme_color": "#050b12",
+  "categories": ["games"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
